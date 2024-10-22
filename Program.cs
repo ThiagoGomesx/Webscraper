@@ -13,10 +13,10 @@ class Program
 
         using (var driver = new ChromeDriver(options))
         {
-            driver.Navigate().GoToUrl("https://transparencia.pe.gov.br/recursos-humanos/remuneracoes/");
+            driver.Navigate().GoToUrl("Url-- site ");
             Console.WriteLine("Página aberta!");
 
-            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(60));
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
 
             int quantidadeDeCliques = 90;
 
@@ -25,13 +25,13 @@ class Program
                 try
                 {
                     // Mudar o contexto para o iframe
-                    var iframe = wait.Until(driver => driver.FindElement(By.CssSelector("iframe"))); // Substitua pelo seletor correto do iframe
+                    var iframe = wait.Until(driver => driver.FindElement(By.CssSelector("seletor do iframe"))); // Substitua pelo seletor correto do iframe
                     driver.SwitchTo().Frame(iframe);
 
                     // Esperar até que o botão esteja presente e clicável
                     var button = wait.Until(driver =>
                     {
-                        var element = driver.FindElement(By.CssSelector("botaoCarregaMaisLinhas"));
+                        var element = driver.FindElement(By.CssSelector("seletor do botão"));
                         return element.Displayed && element.Enabled ? element : null;
                     });
 
